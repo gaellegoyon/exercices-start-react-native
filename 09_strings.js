@@ -11,4 +11,6 @@
 
 const concat = (firstName, lastName) => `${firstName} ${lastName}`;
 
+console.log(concat("John", "Doe"));
+
 module.exports = { concat };

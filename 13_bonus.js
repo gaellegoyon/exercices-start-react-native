@@ -59,4 +59,6 @@ const sortObjectByValue = (obj) => {
   return Object.fromEntries(Object.entries(obj).sort(([, a], [, b]) => a - b));
 };
 
+console.log(sortObjectByValue({ pommes: 3, bananes: 1, cerises: 8 }));
+
 module.exports = { countWords, sortObjectByValue };

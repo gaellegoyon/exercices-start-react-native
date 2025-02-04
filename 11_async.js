@@ -12,7 +12,11 @@ const { sleep } = require("./10_promise");
  *
  */
 const usingThen = (cb) => {
-  sleep().then(cb);
+  console.log("Start usingThen:", new Date().toISOString());
+  sleep().then(() => {
+    console.log("End usingThen:", new Date().toISOString());
+    cb();
+  });
 };
 
 /**
@@ -27,7 +31,9 @@ const usingThen = (cb) => {
  */
 
 const usingAwait = async (cb) => {
+  console.log("Start usingAwait:", new Date().toISOString());
   await sleep();
+  console.log("End usingAwait:", new Date().toISOString());
   cb();
 };
 
@@ -50,5 +56,14 @@ const apiResponse = async (url) => {
   const response = await axios.get(url);
   return response.data;
 };
+
+// Test des fonctions
+usingThen(() => {
+  console.log("Callback usingThen executed");
+});
+
+usingAwait(() => {
+  console.log("Callback usingAwait executed");
+});
 
 module.exports = { usingThen, usingAwait, apiResponse };

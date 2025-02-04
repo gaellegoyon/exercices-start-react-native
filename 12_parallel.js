@@ -26,4 +26,7 @@ const parallel = async () => {
   return results;
 };
 
+// Test des fonctions
+parallel().then(console.log);
+
 module.exports = { parallel };
