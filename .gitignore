@@ -1,1 +1,2 @@
-.vscode
+# Ignore Visual Studio Code folder
+.vscode/
